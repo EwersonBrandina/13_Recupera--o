@@ -9,14 +9,8 @@
 
 <ion-content [fullscren]="true">
 
-  <ion-fab vertical="top" horizontal="end" slot="fixed" edge="true">
-    <ion-fab-button routerLink="/detalhes/">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
   <div id="container">
-    <form [formGroup]="produtoForm" (submit)="enviar()">
+    <form [formGroup]="produtoForm" *ngFor=!modoEdicao (submit)="enviar()">
       <ion-item lines="none">
         <ion-label position="floating">Produto:</ion-label>
         <ion-input formControlName="produto"></ion-input>
@@ -37,6 +31,11 @@
       <ion-label>
         {{arrayProduto.produto}}
       </ion-label>
+      <ion-button>editar</ion-button>
+      <ion-button>excluir</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button padding shape="round" expand="block" click="exibir()">Adc</ion-button>
     </ion-item>
   </div>
 

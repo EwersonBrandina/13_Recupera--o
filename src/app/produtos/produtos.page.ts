@@ -17,6 +17,7 @@ export class ProdutosPage implements OnInit {
   private produto: Produto
   public produtoForm: FormGroup
   public arrayProduto: any
+  public modoEdicao: any
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,6 +40,10 @@ export class ProdutosPage implements OnInit {
     if (this.produtoForm.valid){
       this.produtoService.inserir(this.produtoForm.value)
     }
+  }
+
+  exibir(){
+    this.modoEdicao = false
   }
 
 }
